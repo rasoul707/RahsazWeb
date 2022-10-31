@@ -1,0 +1,40 @@
+.label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.btn{
+
+}
+@media print {
+  .label {
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .btn{
+      display: none;
+  }
+  .info_p{
+      display: flex;
+      justify-content: space-between;
+  }
+  .main_p{
+      padding: 10px !important;
+      font-size: 8px;
+      font-weight: 700;
+  }
+  .name_p{
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .render{
+    font-size: 8px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 960px){
+  .label {
+    font-size: 12px;
+    font-weight: 700;
+  }
+}

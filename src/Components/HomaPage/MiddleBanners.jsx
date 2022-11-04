@@ -48,12 +48,12 @@ export default function MiddleBanners({ banners }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* <Image
+            <Image
               src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${rightImg}`}
               alt={rightImg}
               className={classes.banner}
               objectFit={width <= 960 ? "fill" : "cover"}
-            /> */}
+            />
           </a>
         </Grid>
         <Grid item xs={12} sm={6}>

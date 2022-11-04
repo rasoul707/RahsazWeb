@@ -18,12 +18,14 @@ export default function Home({ data, blogs, about, ff }) {
             {width >= 900 && <CategoryFilter />}
             <main>
                 <InnerContainer>
+                    {/*
                     <TopSlider images={data?.sliders} />
                     <Features about={about} />
                     <Products groups={data?.homepage_groups} />
                     <MiddleBanners banners={data?.banners} />
                     <BlogPosts blogs={blogs?.blog_posts} />
                     <BlogVideos videos={blogs?.aparat_links} />
+                    */}
                     <div style={{ height: "80px" }} />
                     {/*
                     <Categories />

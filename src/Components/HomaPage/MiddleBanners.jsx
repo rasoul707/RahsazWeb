@@ -8,11 +8,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: 24,
   },
   banner: {
-    width: "100%",
+    // width: "100%",
     display: "block",
     borderRadius: 8,
     overflow: "hidden",
-    height: "200px",
+    // height: "200px",
     "& > img": {
       width: "100%",
       objectFit: "cover",

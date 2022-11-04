@@ -11,6 +11,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['zl50.ir'],
+    domains: ['api.zl50.ir'],
   },
 };

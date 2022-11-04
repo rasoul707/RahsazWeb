@@ -109,7 +109,7 @@ export default function TopBanners({ images }) {
         {images?.map(image => {
           return (
             <div key={image.id}>
-              {image.href != null ?
+              {/* {image.href != null ?
                 (
                   <a
                     href={
@@ -136,7 +136,7 @@ export default function TopBanners({ images }) {
                   className={classes.image}
                   objectFit={width <= 960 ? "fill" : "cover"}
                 />
-              }
+              } */}
 
             </div>
           );

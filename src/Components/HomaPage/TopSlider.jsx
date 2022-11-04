@@ -129,14 +129,14 @@ export default function TopBanners({ images }) {
                     />
                   </a>
                 )
-                :
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${image["image"].path}`}
-                  alt={image["image"].path || ""}
-                  className={classes.image}
-                  objectFit={width <= 960 ? "fill" : "cover"}
-                />
-              } */}
+                :*/}
+              <Image
+                src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${image["image"].path}`}
+                alt={image["image"].path || ""}
+                className={classes.image}
+                objectFit={width <= 960 ? "fill" : "cover"}
+              />
+              {/* } */}
 
             </div>
           );

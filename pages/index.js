@@ -18,7 +18,7 @@ export default function Home({ data, blogs, about, ff }) {
             {width >= 900 && <CategoryFilter />}
             <main>
                 <InnerContainer>
-                    <TopSlider images={data?.sliders} />
+                    {/* <TopSlider images={data?.sliders} /> */}
                     <Features about={about} />
                     <Products groups={data?.homepage_groups} />
                     <MiddleBanners banners={data?.banners} />

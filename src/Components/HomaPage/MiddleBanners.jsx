@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     display: "block",
     borderRadius: 8,
     overflow: "hidden",
+    height: "200px",
     "& > img": {
       width: "100%",
       objectFit: "cover",
@@ -20,9 +21,9 @@ const useStyles = makeStyles(theme => ({
       },
     },
   },
-  bannersContainer: {
-    height: "232px",
-  }
+  // bannersContainer: {
+  //   height: "232px",
+  // }
 }));
 
 export default function MiddleBanners({ banners }) {
@@ -41,7 +42,7 @@ export default function MiddleBanners({ banners }) {
   return (
     <div className={classes.bannersWrapper}>
       <Grid container spacing={4}>
-        <Grid item xs={12} sm={6} className={classes.bannersContainer}>
+        <Grid item xs={12} sm={6}>
           <a
             href={
               rightHref?.includes("http") ? rightHref : "https://" + rightHref
@@ -57,7 +58,7 @@ export default function MiddleBanners({ banners }) {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} className={classes.bannersContainer}>
+        <Grid item xs={12} sm={6}>
           <a
             href={leftHref?.includes("http") ? leftHref : "https://" + leftHref}
             target="_blank"

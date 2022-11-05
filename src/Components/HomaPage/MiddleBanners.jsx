@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     display: "block",
     borderRadius: 8,
     overflow: "hidden",
-    // height: "200px",
+    height: "200px",
     "& > img": {
       width: "100%",
       objectFit: "cover",
@@ -21,9 +21,6 @@ const useStyles = makeStyles(theme => ({
       },
     },
   },
-  // bannersContainer: {
-  //   height: "232px",
-  // }
 }));
 
 export default function MiddleBanners({ banners }) {

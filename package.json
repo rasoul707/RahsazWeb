@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "next dev -p 7007",
 		"build": "next build",
-		"start": "next start -p 7008"
+		"start": "next start -p 7008",
+		"build_start": "next build && next start -p 7008"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.10.5",

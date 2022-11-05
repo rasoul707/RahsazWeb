@@ -6,7 +6,11 @@ const useStyle = makeStyles((theme) => ({
   imageWrapper: {
     width: "100%",
     height: "100%",
-    position: "relative",
+    position: "relative"
+    // "& > div": {
+    //   width: "100%",
+    //   height: "100%",
+    // },
   },
 }));
 
@@ -27,6 +31,8 @@ const Image = ({
         // placeholder="blur"
         // blurDataURL="data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="
         layout="responsive"
+        // width="100%"
+        // height="100%"
         fill
         {...imageProps}
       />

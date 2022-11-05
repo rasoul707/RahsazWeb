@@ -44,9 +44,7 @@ export default function MiddleBanners({ banners }) {
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6}>
           <a
-            href={
-              rightHref?.includes("http") ? rightHref : "https://" + rightHref
-            }
+            href={rightHref?.includes("http") ? rightHref : "https://" + rightHref}
             target="_blank"
             rel="noopener noreferrer"
           >

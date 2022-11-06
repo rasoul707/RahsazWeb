@@ -15,11 +15,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     "& .ant-select-selector": {
       borderRadius: "12px !important",
-      height:"44px !important",
-      boxShadow:"none !important"
+      height: "44px !important",
+      boxShadow: "none !important"
     },
-    "& .ant-select:not(.ant-select-disabled):hover .ant-select-selector":{
-        // borderColor:theme.color.boldOrange
+    "& .ant-select:not(.ant-select-disabled):hover .ant-select-selector": {
+      // borderColor:theme.color.boldOrange
     },
   },
   label: {
@@ -39,7 +39,7 @@ const ComplaintsForm = () => {
     console.log(values);
     let dataSend = {
       ...values,
-      user_id:null,
+      user_id: null,
       form_type: "انتقادات، پیشنهادات و شکایات",
     };
     const res = await sendForms(dataSend);
@@ -57,8 +57,8 @@ const ComplaintsForm = () => {
         form={form}
         initialValues={{
           phone_number: null,
-          request_type:"شکایت",
-          section_type:"واحد انبار"
+          request_type: "شکایت",
+          section_type: "واحد فروش"
         }}
         requiredMark={false}
       >
@@ -91,7 +91,7 @@ const ComplaintsForm = () => {
                 },
               ]}
             >
-              <AntInput placeholder="شماره تماس خود را وارد کنید " maxLength={11}  minLength={11}/>
+              <AntInput placeholder="شماره تماس خود را وارد کنید " maxLength={11} minLength={11} />
             </Form.Item>
             <Form.Item
               name="email"
@@ -129,16 +129,14 @@ const ComplaintsForm = () => {
                     size="large"
                   >
                     <Option value="شکایت">
-                        شکایت
+                      شکایت
                     </Option>
                     <Option value="انتقاد">
-                    انتقاد
+                      انتقاد
                     </Option>
                     <Option value="پیشنهاد">
-                    پیشنهاد
+                      پیشنهاد
                     </Option>
-
-
                   </Select>
                 </Form.Item>
               </Col>
@@ -154,14 +152,16 @@ const ComplaintsForm = () => {
                   ]}
                 >
                   <Select
-                    defaultValue="واحد انبار"
+                    defaultValue="واحد فروش"
                     style={{ width: "100%" }}
                     size="large"
                     className={classes.select}
                   >
-                    <Option value="انبار">
-                        واحد انبار
-                        </Option>
+                    <Option value="واحد فروش" children="واحد فروش" />
+                    <Option value="واحد حسابداری" children="واحد حسابداری" />
+                    <Option value="واحد فنی" children="واحد فنی" />
+                    <Option value="واحد انبار" children="واحد انبار" />
+                    <Option value="مدیریت" children="مدیریت" />
                   </Select>
                 </Form.Item>
               </Col>

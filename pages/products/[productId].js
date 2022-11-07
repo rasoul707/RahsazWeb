@@ -77,6 +77,12 @@ import useWindowDimensions from "hooks/useWindowDimensions";
 import { toast } from "Utils/toast";
 import { toFarsiNumber } from "Utils/helperFunction";
 import Head from "next/head"
+
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
+
+
+
 const { TabPane } = Tabs;
 const useStyles = makeStyles(theme => ({
   main: {

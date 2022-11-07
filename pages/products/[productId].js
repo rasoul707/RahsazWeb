@@ -438,6 +438,7 @@ export default function SingleProduct() {
                           infinite={false}
                           isRTL={true}
                           items={gallery}
+                          useBrowserFullscreen={false}
                         />
                       </Grid>
                       <Grid item xs={12} sm={8}>

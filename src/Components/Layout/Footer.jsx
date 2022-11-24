@@ -146,16 +146,16 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     gap: 8,
     // height: "100%",
-    alignItems: "center",
+    alignItems: "stretch",
     "& div": {
       backgroundColor: "#fff",
       borderRadius: "8px",
       width: "100%",
-      height: "100%",
-      padding: "5px 0",
+      // height: "100%",
+      padding: "7px 0",
       "@media(max-width: 960px)": {
-        width: "80%",
-        height: "90%",
+        // width: "80%",
+        // height: "90%",
       },
       "& img": {
         width: "100%",
@@ -257,9 +257,9 @@ export default function Footer({ about }) {
     about,
   )?.field_value;
   let aboutUs = filterByStr("footer_about_us", "field_key", about)?.field_value;
-  let enamad = filterByStr("enamad_code", "field_key", about)?.field_value;
-  let unionCode = filterByStr("union_code", "field_key", about)?.field_value;
-  let organizingCode = filterByStr(
+  let enamadUrl = filterByStr("enamad_code", "field_key", about)?.field_value;
+  let etehadieUrl = filterByStr("union_code", "field_key", about)?.field_value;
+  let samandehiUrl = filterByStr(
     "organizing_code",
     "field_key",
     about,
@@ -341,22 +341,22 @@ export default function Footer({ about }) {
                 <h5>راه‌های ارتباطی ما</h5>
                 <ul>
                   <li>
-                    تلفن : {toFarsiNumber(phone)}
+                    تلفن: {phone?.toLocaleString("fa-IR")}
                   </li>
                   <li>
-                    ساعت کار : {hour}
+                    ساعت کار: {hour}
                   </li>
-                  <li style={{ marginTop: "6px" }}>آدرس :{address}</li>
+                  <li style={{ marginTop: "6px" }}>آدرس: {address}</li>
                 </ul>
               </div>
               <div className={classes.socialIcons}>
-                <a href={instagram}>
+                <a href={instagram} target="_blank">
                   <InstagramSvg />
                 </a>
-                <a href={whatsapp}>
+                <a href={whatsapp} target="_blank">
                   <WhatsappSvg />
                 </a>
-                <a href={telegram}>
+                <a href={telegram} target="_blank">
                   <TelegramSvg />
                 </a>
               </div>
@@ -366,8 +366,8 @@ export default function Footer({ about }) {
                 <Form.Item
                   name="email"
                   rules={[
-                    { type: "email", message: "ایمیل معتبر وارد کنید " },
-                    { required: true, message: "ایمیل خود را وارد کنید " },
+                    { type: "email", message: "ایمیل معتبر وارد کنید" },
+                    { required: true, message: "ایمیل خود را وارد کنید" },
                   ]}
                   label={<div className={classes.label}>عضویت در خبرنامه</div>}
                 >
@@ -399,13 +399,19 @@ export default function Footer({ about }) {
           <Grid item xs={12} md={3}>
             <div className={classes.namad}>
               <div>
-                <img src="/images/logo-footer3.png" alt="" />
+                <a href={samandehiUrl} target="_blank">
+                  <img src="/images/samandehi.png" alt="" />
+                </a>
               </div>
               <div>
-                <img src="/images/logo-footer2.png" alt="" />
+                <a href={etehadieUrl} target="_blank">
+                  <img src="/images/etehadie.png" alt="" />
+                </a>
               </div>
               <div>
-                <img src="/images/logo-footer4.png" alt="" />
+                <a href={enamadUrl} target="_blank">
+                  <img src="/images/enamad.png" alt="" />
+                </a>
               </div>
             </div>
           </Grid>

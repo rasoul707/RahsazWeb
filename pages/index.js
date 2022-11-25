@@ -11,7 +11,7 @@ import { getBlogsHome } from "Services/front.api";
 import useWindowDimensions from "hooks/useWindowDimensions";
 
 
-export default function Home({ data, blogs, about, ff }) {
+export default function Home({ data, blogs, about }) {
     const { width } = useWindowDimensions();
     return (
         <>
@@ -44,7 +44,6 @@ export async function getStaticProps() {
         props: {
             data,
             blogs,
-            ff: JSON.stringify(process.env)
         },
         revalidate: 10, // In seconds
     }

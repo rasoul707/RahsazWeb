@@ -221,7 +221,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Footer({ about }) {
+export default function Footer({ about, footerMenu }) {
   const classes = useStyles();
   const [form] = Form.useForm()
   const onFinish = value => {
@@ -259,16 +259,13 @@ export default function Footer({ about }) {
   let aboutUs = filterByStr("footer_about_us", "field_key", about)?.field_value;
   let enamadUrl = filterByStr("enamad_code", "field_key", about)?.field_value;
   let etehadieUrl = filterByStr("union_code", "field_key", about)?.field_value;
-  let samandehiUrl = filterByStr(
-    "organizing_code",
-    "field_key",
-    about,
-  )?.field_value;
+  let samandehiUrl = filterByStr("organizing_code", "field_key", about)?.field_value;
 
   return (
     <footer className={classes.footer_root}>
+      {JSON.stringify(footerMenu)}
       <InnerContainer>
-        <Grid container>
+        <Grid container spacing={2}>
           <Grid item xs={6} md={2}>
             <div className={classes.menuList}>
               <h5>در راهساز ماشین</h5>

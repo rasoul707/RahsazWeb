@@ -18,6 +18,10 @@ export const getAbout = () => {
   return _axiosWithout.get("/frontend/about-us").then(res => res.data);
 };
 
+export const getFooterMenu = () => {
+  return _axiosWithout.get("/frontend/footer-menu").then(res => res.data);
+};
+
 export const postRss = email => {
   return api.post("/rss", {}, { params: email }).then(res => res);
 };

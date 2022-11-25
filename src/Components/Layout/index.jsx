@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import SideBar from "./SideBar";
 import { drawerWidth } from "Utils/theme";
 
-import { getAbout, getMegaMenu, getMap } from "Services";
+import { getAbout, getMegaMenu, getMap, getFooterMenu } from "Services";
 import { useEffect } from "react";
 import useWindowDimensions from "hooks/useWindowDimensions";
 import BottomNav from "./BottomNav";
@@ -53,6 +53,7 @@ export default function Layout({ children }) {
 
   const [routes, setRoutes] = useState([]);
   const [about, setAbout] = useState([]);
+  const [footerMenu, setFooterMenu] = useState([]);
   const { width } = useWindowDimensions();
   const [status, setStatus] = useState("category");
   const [loading, setLoading] = useState(false);
@@ -66,10 +67,13 @@ export default function Layout({ children }) {
       let api = status == "technical-maps" ? getMap : getMegaMenu;
       const res = await api();
       const about = await getAbout();
+      const footerMenu = await getFooterMenu();
       if (!isRemoved) {
         setRoutes(res);
         setAbout(about);
+        setFooterMenu(footerMenu);
         setLoading(false);
+
       }
     };
     fetchRoutes();
@@ -113,7 +117,7 @@ export default function Layout({ children }) {
               return React.cloneElement(child, { about });
             })}
           </div>
-          <Footer about={about} />
+          <Footer about={about} footerMenu={footerMenu} />
           {width <= 900 && (
             <div
               style={{

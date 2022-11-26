@@ -261,30 +261,33 @@ export default function Footer({ about, footerMenu }) {
   let etehadieUrl = filterByStr("union_code", "field_key", about)?.field_value;
   let samandehiUrl = filterByStr("organizing_code", "field_key", about)?.field_value;
 
+
+  let _menu1 = []
+  let _menu2 = []
+  let _menu3 = []
+  footerMenu.forEach(({ menu_id, link, title }) => {
+    if (menu_id === 1) _menu1.push({ link, title })
+    if (menu_id === 2) _menu2.push({ link, title })
+    if (menu_id === 3) _menu3.push({ link, title })
+  });
+
   return (
     <footer className={classes.footer_root}>
-      {JSON.stringify(footerMenu)}
       <InnerContainer>
         <Grid container spacing={2}>
           <Grid item xs={6} md={2}>
             <div className={classes.menuList}>
               <h5>در راهساز ماشین</h5>
               <ul>
-                <li>
-                  <Link href="/blog" legacyBehavior>
-                    <a>وبلاگ ما</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about-us" legacyBehavior>
-                    <a>درباره ما</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact-us" legacyBehavior>
-                    <a>تماس با ما</a>
-                  </Link>
-                </li>
+                {_menu1.map(({ title, link }) => {
+                  return <>
+                    <li>
+                      <Link href={link} legacyBehavior>
+                        <a>{title}</a>
+                      </Link>
+                    </li>
+                  </>
+                })}
               </ul>
             </div>
           </Grid>
@@ -292,21 +295,15 @@ export default function Footer({ about, footerMenu }) {
             <div className={classes.menuList}>
               <h5>خدمات مشتریان</h5>
               <ul>
-                <li>
-                  <Link href="/" legacyBehavior>
-                    <a>سوالات متداول</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" legacyBehavior>
-                    <a>حریم خصوصی</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" legacyBehavior>
-                    <a>راهنمای خرید از سایت</a>
-                  </Link>
-                </li>
+                {_menu2.map(({ title, link }) => {
+                  return <>
+                    <li>
+                      <Link href={link} legacyBehavior>
+                        <a>{title}</a>
+                      </Link>
+                    </li>
+                  </>
+                })}
               </ul>
             </div>
           </Grid>
@@ -314,21 +311,15 @@ export default function Footer({ about, footerMenu }) {
             <div className={classes.menuList}>
               <h5 className={classes.our_form}>فرم‌های ما</h5>
               <ul>
-                <li>
-                  <Link href="/cooperation-request" legacyBehavior>
-                    <a>درخواست همکاری و نمایندگی</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" legacyBehavior>
-                    <a>درخواست درگاه فروش</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/complaints" legacyBehavior>
-                    <a>انتقادات، پیشنهادات و شکایات</a>
-                  </Link>
-                </li>
+                {_menu3.map(({ title, link }) => {
+                  return <>
+                    <li>
+                      <Link href={link} legacyBehavior>
+                        <a>{title}</a>
+                      </Link>
+                    </li>
+                  </>
+                })}
               </ul>
             </div>
           </Grid>

@@ -261,19 +261,68 @@ export default function Footer({ about, footerMenu }) {
   let etehadieUrl = filterByStr("union_code", "field_key", about)?.field_value;
   let samandehiUrl = filterByStr("organizing_code", "field_key", about)?.field_value;
 
+  const $socialMedia = <div className={classes.socialIcons}>
+    <a href={instagram} target="_blank">
+      <InstagramSvg />
+    </a>
+    <a href={whatsapp} target="_blank">
+      <WhatsappSvg />
+    </a>
+    <a href={telegram} target="_blank">
+      <TelegramSvg />
+    </a>
+  </div>
 
+  const $subscribe = <div>
+    <Form layout="vertical" onFinish={onFinish} requiredMark={false} form={form}>
+      <Form.Item
+        name="email"
+        rules={[
+          { type: "email", message: "ایمیل معتبر وارد کنید " },
+          { required: true, message: "ایمیل خود را وارد کنید " },
+        ]}
+        label={<div className={classes.label}>عضویت در خبرنامه</div>}
+      >
+        <AntInput
+          suffix={
+            <button type="submit" className={classes.submit}>
+              عضویت
+            </button>
+          }
+          placeholder="ایمیل خود را وارد کنید"
+        />
+      </Form.Item>
+    </Form>
+  </div>
 
   const $footerMenu = footerMenu.map(({ id, title, items, xs, sm, md, lg }) => {
     return <Grid item {...{ xs, sm, md, lg }}>
       <div className={classes.menuList}>
         <h5>{title}</h5>
         <ul>
-          {items.map(({ title, link }) => {
-            return <li>
-              <Link href={link} legacyBehavior>
-                <a>{title}</a>
-              </Link>
-            </li>
+          {items.map(({ title, link, }) => {
+            if (link)
+              return <li>
+                <Link href={link} legacyBehavior>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            if (title === '{{phone}}') {
+              return <li>تلفن: {phone?.toLocaleString("fa-IR")}</li>
+            }
+            if (title === '{{working-time}}') {
+              return <li>ساعت کار: {hour}</li>
+            }
+            if (title === '{{address}}') {
+              return <li>آدرس: {address}</li>
+            }
+            if (title === '{{social-media}}') {
+              return <li>{$socialMedia}</li>
+            }
+            if (title === '{{subscribe}}') {
+              return <li>{$subscribe}</li>
+            }
+            return <li>{title}</li>
           })}
         </ul>
       </div>
@@ -285,54 +334,6 @@ export default function Footer({ about, footerMenu }) {
       <InnerContainer>
         <Grid container spacing={2}>
           {$footerMenu}
-          <Grid item xs={12} md={5}>
-            <div className={`${classes.menuList} ${classes.left}`}>
-              <div className={classes.texts}>
-                <h5>راه‌های ارتباطی ما</h5>
-                <ul>
-                  <li>
-                    تلفن: {phone?.toLocaleString("fa-IR")}
-                  </li>
-                  <li>
-                    ساعت کار: {hour}
-                  </li>
-                  <li style={{ marginTop: "6px" }}>آدرس: {address}</li>
-                </ul>
-              </div>
-              <div className={classes.socialIcons}>
-                <a href={instagram} target="_blank">
-                  <InstagramSvg />
-                </a>
-                <a href={whatsapp} target="_blank">
-                  <WhatsappSvg />
-                </a>
-                <a href={telegram} target="_blank">
-                  <TelegramSvg />
-                </a>
-              </div>
-            </div>
-            <div>
-              <Form layout="vertical" onFinish={onFinish} requiredMark={false} form={form}>
-                <Form.Item
-                  name="email"
-                  rules={[
-                    { type: "email", message: "ایمیل معتبر وارد کنید" },
-                    { required: true, message: "ایمیل خود را وارد کنید" },
-                  ]}
-                  label={<div className={classes.label}>عضویت در خبرنامه</div>}
-                >
-                  <AntInput
-                    suffix={
-                      <button type="submit" className={classes.submit}>
-                        عضویت
-                      </button>
-                    }
-                    placeholder="ایمیل خود را وارد کنید"
-                  />
-                </Form.Item>
-              </Form>
-            </div>
-          </Grid>
         </Grid>
       </InnerContainer>
       <hr />

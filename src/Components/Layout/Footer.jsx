@@ -262,67 +262,29 @@ export default function Footer({ about, footerMenu }) {
   let samandehiUrl = filterByStr("organizing_code", "field_key", about)?.field_value;
 
 
-  let _menu1 = []
-  let _menu2 = []
-  let _menu3 = []
-  footerMenu.forEach(({ menu_id, link, title }) => {
-    if (menu_id === 1) _menu1.push({ link, title })
-    if (menu_id === 2) _menu2.push({ link, title })
-    if (menu_id === 3) _menu3.push({ link, title })
+
+  const $footerMenu = footerMenu.map(({ id, title, items, xs, sm, md, lg }) => {
+    return <Grid item {...{ xs, sm, md, lg }}>
+      <div className={classes.menuList}>
+        <h5>{title}</h5>
+        <ul>
+          {items.map(({ title, link }) => {
+            return <li>
+              <Link href={link} legacyBehavior>
+                <a>{title}</a>
+              </Link>
+            </li>
+          })}
+        </ul>
+      </div>
+    </Grid>
   });
 
   return (
     <footer className={classes.footer_root}>
       <InnerContainer>
         <Grid container spacing={2}>
-          <Grid item xs={6} md={2}>
-            <div className={classes.menuList}>
-              <h5>در راهساز ماشین</h5>
-              <ul>
-                {_menu1.map(({ title, link }) => {
-                  return <>
-                    <li>
-                      <Link href={link} legacyBehavior>
-                        <a>{title}</a>
-                      </Link>
-                    </li>
-                  </>
-                })}
-              </ul>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={2}>
-            <div className={classes.menuList}>
-              <h5>خدمات مشتریان</h5>
-              <ul>
-                {_menu2.map(({ title, link }) => {
-                  return <>
-                    <li>
-                      <Link href={link} legacyBehavior>
-                        <a>{title}</a>
-                      </Link>
-                    </li>
-                  </>
-                })}
-              </ul>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <div className={classes.menuList}>
-              <h5 className={classes.our_form}>فرم‌های ما</h5>
-              <ul>
-                {_menu3.map(({ title, link }) => {
-                  return <>
-                    <li>
-                      <Link href={link} legacyBehavior>
-                        <a>{title}</a>
-                      </Link>
-                    </li>
-                  </>
-                })}
-              </ul>
-            </div>
-          </Grid>
+          {$footerMenu}
           <Grid item xs={12} md={5}>
             <div className={`${classes.menuList} ${classes.left}`}>
               <div className={classes.texts}>

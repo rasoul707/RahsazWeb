@@ -361,7 +361,10 @@ export default function Footer({ about, footerMenu }) {
                 </a>
               </div>
               <div>
-                {enamad}
+                <a href={enamad} target="_blank">
+                  <img src="/images/enamad.png" alt="" />
+                </a>
+                {/* {enamad} */}
                 {/* {parse(enamad)} */}
               </div>
             </div>

@@ -12,7 +12,7 @@ import WhatsappSvg from "Assets/img/icons/whatsapp-white.svg";
 import TelegramSvg from "Assets/img/icons/telegram-white.svg";
 import { postRss } from "Services";
 import { toast } from "Utils/toast";
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 
 const useStyles = makeStyles(theme => ({
   footer_root: {
@@ -361,7 +361,8 @@ export default function Footer({ about, footerMenu }) {
                 </a>
               </div>
               <div>
-                {parse(enamad)}
+                {enamad}
+                {/* {parse(enamad)} */}
               </div>
             </div>
           </Grid>

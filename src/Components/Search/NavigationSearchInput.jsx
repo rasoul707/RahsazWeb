@@ -156,7 +156,7 @@ export default function NavCategory() {
   useEffect(() => {
     let timer;
     if (inpt.length > 1) {
-      timer = setTimeout(fetchData, 1000);
+      timer = setTimeout(fetchData, 300);
     } else {
       setIsStart(false);
       setProducts({});

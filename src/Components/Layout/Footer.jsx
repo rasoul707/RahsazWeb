@@ -12,7 +12,6 @@ import WhatsappSvg from "Assets/img/icons/whatsapp-white.svg";
 import TelegramSvg from "Assets/img/icons/telegram-white.svg";
 import { postRss } from "Services";
 import { toast } from "Utils/toast";
-// import parse from 'html-react-parser';
 
 const useStyles = makeStyles(theme => ({
   footer_root: {
@@ -360,10 +359,10 @@ export default function Footer({ about, footerMenu }) {
                   <img src="/images/etehadie.png" alt="" />
                 </a>
               </div>
-              <div>
-                <a href={enamad} target="_blank">
+              <div dangerouslySetInnerHTML={{ __html: enamad }}>
+                {/* <a href={enamad} target="_blank">
                   <img src="/images/enamad.png" alt="" />
-                </a>
+                </a> */}
                 {/* {enamad} */}
                 {/* {parse(enamad)} */}
               </div>

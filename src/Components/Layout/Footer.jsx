@@ -257,9 +257,9 @@ export default function Footer({ about, footerMenu }) {
     about,
   )?.field_value;
   let aboutUs = filterByStr("footer_about_us", "field_key", about)?.field_value;
-  let enamadUrl = filterByStr("enamad_code", "field_key", about)?.field_value;
-  let etehadieUrl = filterByStr("union_code", "field_key", about)?.field_value;
-  let samandehiUrl = filterByStr("organizing_code", "field_key", about)?.field_value;
+  let enamad = filterByStr("enamad_code", "field_key", about)?.field_value;
+  let etehadie = filterByStr("union_code", "field_key", about)?.field_value;
+  let samandehi = filterByStr("organizing_code", "field_key", about)?.field_value;
 
   const $socialMedia = <div className={classes.socialIcons}>
     <a href={instagram} target="_blank">
@@ -350,19 +350,20 @@ export default function Footer({ about, footerMenu }) {
           <Grid item xs={12} md={3}>
             <div className={classes.namad}>
               <div>
-                <a href={samandehiUrl} target="_blank">
+                <a href={samandehi} target="_blank">
                   <img src="/images/samandehi.png" alt="" />
                 </a>
               </div>
               <div>
-                <a href={etehadieUrl} target="_blank">
+                <a href={etehadie} target="_blank">
                   <img src="/images/etehadie.png" alt="" />
                 </a>
               </div>
               <div>
-                <a href={enamadUrl} target="_blank">
+                {enamad}
+                {/* <a href={enamadUrl} target="_blank">
                   <img src="/images/enamad.png" alt="" />
-                </a>
+                </a> */}
               </div>
             </div>
           </Grid>

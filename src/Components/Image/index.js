@@ -15,6 +15,7 @@ const Image = ({
   src,
   imageProps,
   objectFit = "cover",
+  alt,
   ...restProps
 }) => {
   const classes = useStyle();
@@ -24,6 +25,7 @@ const Image = ({
         src={src}
         objectFit={objectFit}
         loading="lazy"
+        alt={alt}
         // placeholder="blur"
         // blurDataURL="data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="
         layout="responsive"

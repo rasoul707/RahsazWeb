@@ -95,9 +95,11 @@ const MapsIndex = ({ map, items }) => {
           <Row gutter={width > 960 ? [20, 20] : [0, 20]}>
             <Col xs={24} sm={24} lg={12}>
               <section className={classes.img_wrapper}>
-                <Image
+                <img
                   src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${map?.image?.path}`}
                   alt={map?.name}
+                // objectFit={width <= 960 ? "fill" : "cover"}
+                // imageProps={{ fill: false, width: 200, height: 500 }}
                 />
               </section>
             </Col>

@@ -69,7 +69,7 @@ export default function PostCard({ name, isVideo, id, img = "1643313361 Rectangl
   const classes = useStyles();
   let faDate = moment(date, 'YYYY/MM/DD').locale('fa')
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/blog/${id}`} legacyBehavior>
       <a className={classes.productCard}>
         <div className={classes.imageWrapper}>
           <Image className={classes.image} src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`} alt={name} />

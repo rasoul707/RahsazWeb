@@ -24,11 +24,11 @@ const Image = ({
       <NextImage
         src={src}
         objectFit={objectFit}
-        loading="lazy"
+        // loading="lazy"
         alt={alt}
         // placeholder="blur"
         // blurDataURL="data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="
-        layout="responsive"
+        // layout="responsive"
         fill
         priority
         {...imageProps}

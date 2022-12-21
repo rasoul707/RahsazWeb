@@ -138,7 +138,7 @@ export default function MenuItem({
       className={`${classes.itemLink} ${isActive ? classes.itemLinkActive : ""} ${open ? classes.itemOpen : ""} ${!item.icon ? classes.itemLinkNoIcon : ""}`}
       // onClick={handleClick}
       onClick={() => {
-        if (item.children?.length == 0) {
+        if (!item.children?.length) {
           if (status == "technical-maps") {
             return router.push(`/maps/${item.id}`);
           } else {

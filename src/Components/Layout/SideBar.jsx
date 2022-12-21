@@ -17,21 +17,21 @@ const useStyles = makeStyles(theme => ({
       background: "#ffffff !important",
       position: ({ phone }) => (phone ? "" : "fixed"),
     },
-    "& .ant-spin-nested-loading":{
-      overflowX:"hidden !important"
+    "& .ant-spin-nested-loading": {
+      overflowX: "hidden !important"
     },
-    "& .ant-spin-container":{
-      overflowX:"hidden !important"
+    "& .ant-spin-container": {
+      overflowX: "hidden !important"
 
     }
   },
   drawerPaper: {
     width: ({ phone }) => (phone ? "100%" : drawerWidth),
-    "& .ant-spin-nested-loading":{
-      overflowX:"hidden !important"
+    "& .ant-spin-nested-loading": {
+      overflowX: "hidden !important"
     },
-    "& .ant-spin-container":{
-      overflowX:"hidden !important"
+    "& .ant-spin-container": {
+      overflowX: "hidden !important"
 
     },
     border: "none",
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
   logoWrapper: {
     padding: "20px 57px",
     display: ({ phone }) => phone && "none",
-    cursor:"pointer",
+    cursor: "pointer",
     // borderBottom: "1px solid #EBEBEB",
     marginBottom: 14,
     "& > img": {
@@ -120,11 +120,11 @@ const useStyles = makeStyles(theme => ({
   },
   drawerRoot: {
     position: ({ phone }) => (phone ? "" : "fixed"),
-    "& .ant-spin-nested-loading":{
-      overflowX:"hidden !important"
+    "& .ant-spin-nested-loading": {
+      overflowX: "hidden !important"
     },
-    "& .ant-spin-container":{
-      overflowX:"hidden !important"
+    "& .ant-spin-container": {
+      overflowX: "hidden !important"
 
     }
   },
@@ -151,6 +151,7 @@ export default function SideBar(props) {
   return (
     <div className={classes.sidebarWrapper}>
       <Hidden mdUp={props.mode == "pc"} implementation="css">
+        jjj
         <Drawer
           variant="temporary"
           anchor={"left"}

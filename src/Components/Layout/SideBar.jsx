@@ -148,9 +148,7 @@ export default function SideBar(props) {
     </List>
   );
 
-  useEffect(() => {
-    props.setStatus("technical-maps")
-  }, [])
+
 
   return (
     <div className={classes.sidebarWrapper}>

@@ -30,6 +30,7 @@ const Image = ({
         // blurDataURL="data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="
         layout="responsive"
         fill
+        priority
         {...imageProps}
       />
     </div>

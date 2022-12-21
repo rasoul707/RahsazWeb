@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Hidden, List, Drawer, makeStyles } from "@material-ui/core";
 import { drawerWidth } from "Utils/theme";
 import { RadioButton } from "Components/Button";
@@ -148,10 +148,14 @@ export default function SideBar(props) {
     </List>
   );
 
+  useEffect(() => {
+    props.setStatus("technical-maps")
+  }, [])
+
   return (
     <div className={classes.sidebarWrapper}>
       <Hidden mdUp={props.mode == "pc"} implementation="css">
-        jjj
+
         <Drawer
           variant="temporary"
           anchor={"left"}

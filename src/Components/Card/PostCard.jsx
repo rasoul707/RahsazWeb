@@ -4,8 +4,7 @@ import Link from "next/link";
 import moment from 'jalali-moment'
 import clsx from "clsx";
 import { toFarsiNumber } from "Utils/helperFunction";
-import NextImage from "next/image";
-
+import Image from "Components/Image";
 
 const useStyles = makeStyles(theme => ({
   productCard: {
@@ -42,6 +41,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   imageWrapper: {
+
     width: "100%",
     "& > span": {
       position: "absolute",
@@ -72,7 +72,7 @@ export default function PostCard({ name, isVideo, id, img = "1643313361 Rectangl
     <Link href={`/blog/${id}`} legacyBehavior>
       <a className={classes.productCard}>
         <div className={classes.imageWrapper}>
-          <NextImage className={classes.image} src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`} alt={name} fill />
+          <Image className={classes.image} src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`} alt={name} />
           {isVideo && <span>ویدئو آموزشی</span>}
         </div>
         <span>{`${toFarsiNumber(faDate.format("DD"))} ${faDate.format('MMMM')} ${toFarsiNumber(faDate.format("YYYY"))}`}</span>

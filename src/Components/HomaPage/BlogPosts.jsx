@@ -29,7 +29,7 @@ export default function BlogPosts({ blogs }) {
   return (
     <div className={classes.categoriesWrapper}>
       <Link href={"/blog"} legacyBehavior>
-        <h2>وبلاگ ما</h2>
+        <h2>وبلاگ من</h2>
       </Link>
       <PrimaryCarousel responsive={responsive}>
         {blogs?.map(blog => (

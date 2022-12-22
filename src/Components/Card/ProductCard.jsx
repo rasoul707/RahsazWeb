@@ -93,7 +93,13 @@ export default function ProductCard({ name, discount, price, id, img, alt }) {
     <Link href={`/products/${id}`} legacyBehavior>
       <a className={classes.productCard}>
         <div className={classes.imageWrapper}>
-          <img src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`} alt={alt_tag} />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`}
+            alt={alt_tag}
+            fill
+            priority
+          />
+          {/* <img src={`${process.env.NEXT_PUBLIC_APP_FILE_BASE_URL}${img}`} alt={alt_tag} /> */}
           {discount && <span>10%</span>}
         </div>
         <h3 title="نام محصول می تواند بسیار بسیار طولانی باشد">
